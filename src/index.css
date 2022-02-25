@@ -1,0 +1,68 @@
+:root {
+  --fontWeightLight: 300;
+  --fontWeightRegular: 400;
+  --fontWeightSemiBold: 500;
+  --fontWeightBold: 600;
+
+  --fontSizeSmall: 14px;
+  --fontSizeNormal: 16px;
+  --fontSizeTitle: 20px;
+  --fontSizeBrand: 25px;
+  --fontSizeBig: 40px;
+
+  --fontColorGray: #5b5c61;
+  --fontColorPlaceholder: #827f80;
+
+  --primaryColor: #1a1c1e;
+  --secondaryColor: #f1f3f4;
+  --tertiaryColor: #510bf4;
+  --whiteColor: #fff;
+  --grayColor: #827f80;
+
+  --primary: var(--tertiaryColor);
+  --hover: #e9e8eb;
+  --active: #404453;
+  --success: #508b4e;
+  --warning: #ddce00;
+  --alert: #c70000;
+  --info: #0092cc;
+
+  --borderRadiusGeneral: 0.8rem;
+  --borderRadius: 0.25rem;
+
+  --transition: 0.25s all ease-in-out;
+}
+
+@media screen and (max-width: 1366px) {
+  :root {
+    --fontSizeSmall: 12px;
+    --fontSizeNormal: 14px;
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  min-height: 100vh;
+  font-size: 16px;
+  background-color: var(--primaryColor);
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
