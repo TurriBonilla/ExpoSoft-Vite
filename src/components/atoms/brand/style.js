@@ -7,7 +7,12 @@ const Logotipo = styled(Link)`
   justify-content: center;
   align-items: center;
   border-radius: 0.5rem;
-  padding: 0.35rem;
+  width: 2.6vw;
+  height: 2.6vw;
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+  min-width: 2rem;
+  min-height: 2rem;
   border: 1px solid white;
 
   svg {

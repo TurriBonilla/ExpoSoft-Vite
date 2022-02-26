@@ -1,15 +1,6 @@
-import {
-  ChangeEvent,
-  Dispatch,
-  InputHTMLAttributes,
-  SetStateAction
-} from 'react'
+import { InputProps } from 'interfaces'
+import { ChangeEvent } from 'react'
 import { style } from './style'
-
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  setState: Dispatch<SetStateAction<any>>
-  name: string
-}
 
 const Input = (props: InputProps) => {
   const { setState, name } = props

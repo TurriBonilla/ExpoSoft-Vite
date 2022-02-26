@@ -14,19 +14,11 @@ const Home = () => {
         <style.WrapperMenu>
           <Brand />
           <style.WrapperIconBars
-            onClick={() => setShowMenu(handleShowMenu(showMenu))}
-          >
+            onClick={() => setShowMenu(handleShowMenu(showMenu))}>
             {showMenu ? <MdOutlineMenuOpen /> : <MdMenu />}
           </style.WrapperIconBars>
         </style.WrapperMenu>
         <Sidebar showMenu={showMenu} />
-        <style.WraperProfile>
-          <style.WrapperImageProfile>WS</style.WrapperImageProfile>
-          <style.WrapperInformation>
-            <p>S&L System LTDA</p>
-            <p className='emailBusiness'>correo123@gmail.com</p>
-          </style.WrapperInformation>
-        </style.WraperProfile>
       </style.HeaderMenu>
       <style.WrapperOutlet>
         <Outlet />

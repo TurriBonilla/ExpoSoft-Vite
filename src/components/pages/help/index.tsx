@@ -1,5 +1,6 @@
 import { CardHelp, HelpInformation } from 'components/organisms'
 import { dataCardHelp } from 'const'
+import { CardHelpProps } from 'interfaces'
 import { useState } from 'react'
 import { handleOption } from './Help'
 import { style } from './style'
@@ -7,9 +8,9 @@ import { style } from './style'
 const Help = () => {
   const [optionHelp, setOptionHelp] = useState<number>(0)
   return (
-    <>
+    <style.Wrapper>
       <style.CardContainer>
-        {dataCardHelp.map((card, key) => (
+        {dataCardHelp.map((card: CardHelpProps, key: number) => (
           <CardHelp
             key={key}
             title={card.title}
@@ -22,7 +23,7 @@ const Help = () => {
       <style.InfoContainer>
         {optionHelp === 0 && <HelpInformation />}
       </style.InfoContainer>
-    </>
+    </style.Wrapper>
   )
 }
 

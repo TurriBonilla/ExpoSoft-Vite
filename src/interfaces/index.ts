@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react'
+import { Dispatch, InputHTMLAttributes, MouseEvent, SetStateAction } from 'react'
 
 export interface ICredentials {
   email: string
@@ -23,4 +23,9 @@ export interface CardHelpProps {
   icon: JSX.Element
   isActive: boolean
   onClick: (e: MouseEvent<HTMLButtonElement>) => void
+}
+
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  setState: Dispatch<SetStateAction<any>>
+  name: any
 }

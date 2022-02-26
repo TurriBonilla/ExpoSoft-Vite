@@ -1,37 +1,50 @@
 import styled from 'styled-components'
 
+const Wrapper = styled.main`
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 100%;
+`;
+
 const CardContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+height: calc(30% - 0.5rem);
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 1rem;
 `
 
 const InfoContainer = styled.div`
-  margin-top: 1rem;
-  border-radius: var(--borderRadiusGeneral);
-  height: calc(100vh - 15rem);
-  background: var(--whiteColor);
-  box-shadow: 0px 0px 70px -50px rgba(181, 181, 181, 1);
-  padding: 2rem 0 2rem 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  color: var(--fontColorGray);
-  justify-items: center;
-  place-content: center;
-  align-items: center;
-  div {
-    h3 {
-      font-size: var(--fontSizeBrand);
-      margin-bottom: 1rem;
-      color: var(--success);
-    }
+height: calc(70% - 0.5rem);
+border-radius: var(--borderRadiusGeneral);
+background: var(--whiteColor);
+box-shadow: 0px 0px 70px -50px rgba(181, 181, 181, 1);
+display: grid;
+align-items: center;
+justify-items: flex-end;
+grid-template-columns: 1.5fr 1fr;
+padding: 1rem;
+color: var(--fontColorGray);
+
+div {
+  h3 {
+    font-size: var(--fontSizeBrand);
+    margin-bottom: 1rem;
+    color: var(--success);
   }
   p {
-    height: fit-content;
+    line-height: 1.5rem;
   }
+}
+img {
+  width: 90%;
+  object-fit: contain;
+  opacity: 0.7;
+}
 `
 
 export const style = {
+  Wrapper,
   CardContainer,
   InfoContainer
 }

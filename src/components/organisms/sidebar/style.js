@@ -8,23 +8,24 @@ const FlexCenter = css`
 `
 
 const WrapperLinks = styled.div`
-  height: calc(100vh - 130px);
-  display: flex;
-  width: 25%;
-  max-width: 15rem;
-  flex-direction: column;
-  position: absolute;
-  transition: var(--transition);
-  padding: 0 1rem;
-  justify-content: center;
+height: calc(100% - 60px);
+width: 100%;
+min-width: 15rem;
+${FlexCenter};
+flex-direction: column;
+position: absolute;
+top: 60px;
+background-color: var(--primaryColor);
 
-  @media screen and (max-width: 900px) {
-    transform: ${({ show }) => (show ? 'translateX(0)' : 'translateX(-100%)')};
-    width: 70%;
-  }
+@media screen and (max-width: 900px) {
+  transform: ${({ show }) => (show ? 'translateX(0)' : 'translateX(-100%)')};
+  height: calc(100vh - 60px);
+  width: 30%;
+}
 `
 
 const LinkItem = styled(NavLink)`
+width: calc(100% - 2rem);
   color: var(--fontColorGray);
   padding: 0.8rem 1rem;
   ${FlexCenter};
@@ -37,6 +38,7 @@ const LinkItem = styled(NavLink)`
   &:hover {
     background-color: var(--primaryHover);
     color: var(--whiteColor);
+
     svg {
       fill: var(--whiteColor);
       transition: none;
@@ -57,7 +59,51 @@ const LinkItem = styled(NavLink)`
   }
 `
 
+const WraperProfile = styled.div`
+  position: sticky;
+  top: 100%;
+  color: white;
+  height: 60px;
+  width: calc(100% - 2rem);
+  display: grid;
+  align-items: center;
+  border-top: 1px solid #797b7f45;
+  grid-template-columns: 2rem 1fr;
+  gap: 0.8rem;
+
+  @media screen and (max-width: 900px) {
+    transform: ${({ show }) => (show ? 'translateX(0)' : 'translateX(-100%)')};
+  }
+`
+
+const WrapperImageProfile = styled.div`
+  width: 2rem;
+  height: 2rem;
+  background: white;
+  ${FlexCenter}
+  border-radius: 0.5rem;
+  padding: 0.35rem;
+  color: var(--primaryColor);
+  font-weight: var(--fontWeightBold);
+`
+
+const WrapperInformation = styled.div`
+  p {
+    width: calc(100% - 3rem);
+    font-size: var(--fontSizeNormal);
+    font-weight: var(--fontWeightLight);
+    color: var(--success);
+  }
+  .emailBusiness {
+    font-size: var(--fontSizeSmall);
+    color: var(--fontColorGray);
+  }
+`
+
 export const style = {
   WrapperLinks,
-  LinkItem
+  LinkItem,
+  WraperProfile,
+  WrapperImageProfile,
+  WrapperInformation
 }

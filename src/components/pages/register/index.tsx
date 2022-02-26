@@ -1,7 +1,7 @@
 import { Button, Input } from 'components/atoms'
 import { Divider } from 'components/templates'
 import { dataFormRegister } from 'const'
-import { IRegister } from 'interfaces'
+import { InputProps, IRegister } from 'interfaces'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { validateRegister } from './register'
@@ -14,7 +14,7 @@ const Register = () => {
     email: '',
     confirmEmail: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
   })
   const navigate = useNavigate()
   return (
@@ -24,7 +24,7 @@ const Register = () => {
       </style.TextRegister>
       <>
         <style.WrapperItems>
-          {dataFormRegister.map((element, key) => (
+          {dataFormRegister.map((element: InputProps, key: number) => (
             <style.WrapperLabelAndInput key={key}>
               <Input
                 id={element.id}
@@ -38,14 +38,14 @@ const Register = () => {
         </style.WrapperItems>
       </>
       <Button
-        tag='Registrarse'
-        type='button'
-        typeButton='primary'
+        tag="Registrarse"
+        type="button"
+        typeButton="primary"
         onClick={() => validateRegister(register, navigate)}
       />
       <style.TextRegister>
         ¿Ya tienes una cuenta? &nbsp;
-        <style.LinkRegister to='/login'>Inicia sesión aquí.</style.LinkRegister>
+        <style.LinkRegister to="/login">Inicia sesión aquí.</style.LinkRegister>
       </style.TextRegister>
     </Divider>
   )
