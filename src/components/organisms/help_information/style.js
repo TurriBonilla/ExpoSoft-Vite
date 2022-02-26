@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+const Text = styled.p`
+  line-height: 1.5rem;
+`
+
 const WrapperImage = styled.div`
   width: 27vw;
   height: 27vw;
@@ -11,5 +15,6 @@ const WrapperImage = styled.div`
 `
 
 export const style = {
+  Text,
   WrapperImage
 }
