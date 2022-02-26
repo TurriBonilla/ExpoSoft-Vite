@@ -1,6 +1,6 @@
 const validateEmail = (email: string) => {
   if (
-    !/^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|es)+$/.test(
+    !/^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|es|co|edu)+$/.test(
       email
     )
   ) {

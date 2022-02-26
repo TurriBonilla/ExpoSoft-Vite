@@ -7,8 +7,8 @@ const FlexCenter = css`
 `
 
 const Container = styled.main`
-display: grid;
-grid-template-columns: minmax(15rem, 0.5fr) 2fr;
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.5fr) 2fr;
 
   @media screen and (max-width: 900px) {
     grid-template-columns: 1fr;
@@ -16,27 +16,34 @@ grid-template-columns: minmax(15rem, 0.5fr) 2fr;
 `
 
 const HeaderMenu = styled.section`
-width: 100%;
-height: calc(100vh - 0.8rem);
-flex-direction: column;
-position: relative;
-margin-top: 0.8rem;
+  width: 100%;
+  height: calc(100vh - 0.8rem);
+  flex-direction: column;
+  position: relative;
+  margin-top: 0.8rem;
 
-@media screen and (max-width: 900px) {
-  height: 60px;
-  margin-top: 0;
-}
+  @media screen and (max-width: 900px) {
+    height: 60px;
+    margin-top: 0;
+  }
 `
 
 const WrapperMenu = styled.section`
-${FlexCenter};
-justify-content: flex-start;
-padding-left: 1rem;
-width: 100%;
-height: 60px;
-position: absolute;
-top: 0;
-
+  ${FlexCenter};
+  padding-left: 1rem;
+  justify-content: flex-start;
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  .probando {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  h1 {
+    color: white;
+  }
   @media screen and (max-width: 900px) {
     justify-content: space-between;
     padding-right: 0.5%;
@@ -62,16 +69,16 @@ const WrapperIconBars = styled.div`
 `
 
 const WrapperOutlet = styled.main`
-width: calc(100% - 1rem);
-height: calc(100vh - 1rem);
-margin: 0.5rem;
-padding: 1rem;
-border-radius: var(--borderRadiusGeneral);
-background: var(--secondaryColor);
+  width: calc(100% - 1rem);
+  height: calc(100vh - 1rem);
+  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: var(--borderRadiusGeneral);
+  background: var(--secondaryColor);
 
-@media screen and (max-width: 900px) {
-  height: calc(100vh - calc(1rem + 60px));
-}
+  @media screen and (max-width: 900px) {
+    height: calc(100vh - calc(1rem + 60px));
+  }
 `
 
 export const style = {
