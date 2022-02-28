@@ -1,6 +1,7 @@
 import { style } from './style'
 import { dataSidebar } from 'const'
 import { SidebarProps } from 'interfaces'
+import { MdOutlinePowerSettingsNew } from 'react-icons/md'
 
 const Sidebar = (props: SidebarProps) => {
   const { showMenu } = props
@@ -16,8 +17,9 @@ const Sidebar = (props: SidebarProps) => {
         <style.WrapperImageProfile>WS</style.WrapperImageProfile>
         <style.WrapperInformation>
           <p>S&L System LTDA</p>
-          <p className="emailBusiness">waltersantander36594584@gmail.com</p>
+          <p className='companyOwner'>Walter Santander</p>
         </style.WrapperInformation>
+        <MdOutlinePowerSettingsNew />
       </style.WraperProfile>
     </style.WrapperLinks>
   )

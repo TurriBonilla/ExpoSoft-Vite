@@ -12,9 +12,13 @@ const Home = () => {
     <style.Container>
       <style.HeaderMenu>
         <style.WrapperMenu>
-          <Brand />
+          <div className='probando'>
+            <Brand />
+            <h1>ExpoSoft</h1>
+          </div>
           <style.WrapperIconBars
-            onClick={() => setShowMenu(handleShowMenu(showMenu))}>
+            onClick={() => setShowMenu(handleShowMenu(showMenu))}
+          >
             {showMenu ? <MdOutlineMenuOpen /> : <MdMenu />}
           </style.WrapperIconBars>
         </style.WrapperMenu>

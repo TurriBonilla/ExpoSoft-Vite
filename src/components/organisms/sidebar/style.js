@@ -8,24 +8,24 @@ const FlexCenter = css`
 `
 
 const WrapperLinks = styled.div`
-height: calc(100% - 60px);
-width: 100%;
-min-width: 15rem;
-${FlexCenter};
-flex-direction: column;
-position: absolute;
-top: 60px;
-background-color: var(--primaryColor);
+  height: calc(100% - 60px);
+  width: 100%;
+  min-width: 15rem;
+  ${FlexCenter};
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  background-color: var(--primaryColor);
 
-@media screen and (max-width: 900px) {
-  transform: ${({ show }) => (show ? 'translateX(0)' : 'translateX(-100%)')};
-  height: calc(100vh - 60px);
-  width: 30%;
-}
+  @media screen and (max-width: 900px) {
+    transform: ${({ show }) => (show ? 'translateX(0)' : 'translateX(-100%)')};
+    height: calc(100vh - 60px);
+    width: 30%;
+  }
 `
 
 const LinkItem = styled(NavLink)`
-width: calc(100% - 2rem);
+  width: calc(100% - 2rem);
   color: var(--fontColorGray);
   padding: 0.8rem 1rem;
   ${FlexCenter};
@@ -68,8 +68,16 @@ const WraperProfile = styled.div`
   display: grid;
   align-items: center;
   border-top: 1px solid #797b7f45;
-  grid-template-columns: 2rem 1fr;
+  grid-template-columns: 2rem 1fr 1.5rem;
   gap: 0.8rem;
+  svg {
+    cursor: pointer;
+    font-size: 1.5rem;
+    fill: var(--alert);
+    &:hover {
+      fill: var(--fontColorGray);
+    }
+  }
 
   @media screen and (max-width: 900px) {
     transform: ${({ show }) => (show ? 'translateX(0)' : 'translateX(-100%)')};
@@ -88,13 +96,16 @@ const WrapperImageProfile = styled.div`
 `
 
 const WrapperInformation = styled.div`
+  width: 100%;
   p {
-    width: calc(100% - 3rem);
     font-size: var(--fontSizeNormal);
     font-weight: var(--fontWeightLight);
     color: var(--success);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
-  .emailBusiness {
+  .companyOwner {
     font-size: var(--fontSizeSmall);
     color: var(--fontColorGray);
   }
