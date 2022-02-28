@@ -8,7 +8,7 @@ const FlexCenter = css`
 
 const Container = styled.main`
 display: grid;
-grid-template-columns: minmax(15rem, 0.5fr) 2fr;
+grid-template-columns: minmax(15rem, 0.325fr) 2fr;
 
   @media screen and (max-width: 900px) {
     grid-template-columns: 1fr;
