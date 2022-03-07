@@ -36,17 +36,28 @@ const WrapperMenu = styled.section`
   height: 60px;
   position: absolute;
   top: 0;
-  .probando {
+  
+  .ContainerBrand {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    width: 100%;
+
+    h1 {
+      color: white;
+      margin-left: 15%;
+    }
   }
-  h1 {
-    color: white;
-  }
+  
   @media screen and (max-width: 900px) {
     justify-content: space-between;
     padding-right: 0.5%;
+
+    .ContainerBrand {
+      h1 {
+        color: white;
+        margin: 0 auto;
+      }
+    }
   }
 `
 

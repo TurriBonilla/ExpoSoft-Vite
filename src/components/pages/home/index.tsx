@@ -12,7 +12,7 @@ const Home = () => {
     <style.Container>
       <style.HeaderMenu>
         <style.WrapperMenu>
-          <div className='probando'>
+          <div className='ContainerBrand'>
             <Brand />
             <h1>ExpoSoft</h1>
           </div>

@@ -41,7 +41,6 @@ const LinkItem = styled(NavLink)`
 
     svg {
       fill: var(--whiteColor);
-      transition: none;
     }
   }
 

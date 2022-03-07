@@ -1,10 +1,13 @@
+import { style } from './style'
 import { ExpoHelp } from 'assets'
 import { Title } from 'components/atoms'
+
+const { WrapperInformation } = style
 
 const HelpInformation = () => {
   return (
     <>
-      <div>
+      <WrapperInformation>
         <Title title={'ExpoSoft'} />
         <p>
           Con ExpoSoft tendrás la posibilidad de conocer en tiempo record el
@@ -14,7 +17,7 @@ const HelpInformation = () => {
           empresas analizadas previamente para darte recomendaciones sobre como
           fortalecer estos puntos.
         </p>
-      </div>
+      </WrapperInformation>
       <img src={ExpoHelp} alt="Ayuda ExpoSoft" />
     </>
   )

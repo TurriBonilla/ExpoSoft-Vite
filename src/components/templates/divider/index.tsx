@@ -11,7 +11,7 @@ const Divider = ({ children }: DividerProps) => {
     <style.WrapperBody>
       <style.WrapperForm>
         <style.Form>
-          <Title size={1.5} title='ExpoSoft' />
+          <Title title='ExpoSoft' />
           {children}
           <style.Copyright>
             Copyright &copy; {new Date().getFullYear()} ExpoSoft | Derechos

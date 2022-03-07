@@ -29,3 +29,13 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   setState: Dispatch<SetStateAction<any>>
   name: any
 }
+
+export interface IFaq {
+  faq: string,
+  body: string,
+  show: boolean
+}
+
+export interface IResultModule {
+  title: string
+}

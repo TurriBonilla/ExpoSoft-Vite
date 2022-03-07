@@ -46,6 +46,11 @@ const Form = styled.form`
   flex-direction: column;
   gap: 0.25rem;
   z-index: 1;
+
+  h3 {
+    font-size: 1.5rem;
+  }
+  
   @media screen and (max-width: 900px) {
     width: 65%;
   }

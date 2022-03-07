@@ -1,4 +1,4 @@
-import { CardHelp, HelpInformation } from 'components/organisms'
+import { CardHelp, Faqs, HelpInformation } from 'components/organisms'
 import { dataCardHelp } from 'const'
 import { CardHelpProps } from 'interfaces'
 import { useState } from 'react'
@@ -21,7 +21,7 @@ const Help = () => {
         ))}
       </style.CardContainer>
       <style.InfoContainer>
-        {optionHelp === 0 && <HelpInformation />}
+        {optionHelp === 0 ? <HelpInformation /> : optionHelp === 1 && <Faqs />}
       </style.InfoContainer>
     </style.Wrapper>
   )

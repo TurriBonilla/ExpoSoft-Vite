@@ -26,16 +26,6 @@ grid-template-columns: 1.5fr 1fr;
 padding: 1rem;
 color: var(--fontColorGray);
 
-div {
-  h3 {
-    font-size: var(--fontSizeBrand);
-    margin-bottom: 1rem;
-    color: var(--success);
-  }
-  p {
-    line-height: 1.5rem;
-  }
-}
 img {
   width: 90%;
   object-fit: contain;
