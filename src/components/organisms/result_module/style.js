@@ -10,6 +10,7 @@ h3 {
     font-size: 1rem;
     color: var(--success);
     text-align: center;
+    min-height: 3.2rem;
 }
 
 p {
