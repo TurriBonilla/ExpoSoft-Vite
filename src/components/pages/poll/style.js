@@ -21,19 +21,19 @@ h3 {
 `;
 
 const WrapperForm = styled.div`
-border: 1px solid red;
-height: calc(100vh - 8.5rem);
+/* border: 1px solid red; */
+min-height: calc(100vh - (8.5rem + 1px));
 display: grid;
 grid-template-columns: 1fr 0.5fr;
 `;
 
 const Modules = styled.div`
-border: 1px solid blue;
+/* border: 1px solid blue; */
 `;
 
 const NumberModule = styled.div`
-min-width: 2vw;
-min-height: 2vw;
+min-width: 40px;
+min-height: 40px;
 border-radius: 100%;
 display: flex;
 justify-content: center;
@@ -41,6 +41,11 @@ align-items: center;
 margin-right: 0.5rem;
 background-color: ${({ isActive }) => isActive ? 'var(--success)' : 'var(--hover)'};
 color: ${({ isActive }) => isActive ? 'var(--whiteColor)' : 'var(--primaryColor)'};
+
+@media screen and (max-width: 1100px) {
+    min-height: 30px;
+    min-width: 30px;
+}
 `;
 
 const ActiveModule = styled.div`

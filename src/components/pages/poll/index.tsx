@@ -16,6 +16,12 @@ const Poll = () => {
       <WrapperForm>
         <div>
           <QuestionOfPoll />
+          <QuestionOfPoll />
+          <QuestionOfPoll />
+          <QuestionOfPoll />
+          <QuestionOfPoll />
+          <QuestionOfPoll />
+          <QuestionOfPoll />
         </div>
         <Modules>
           {dataPoll.map((data: object, key: number) => (

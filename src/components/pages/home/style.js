@@ -16,15 +16,19 @@ grid-template-columns: minmax(15rem, 0.325fr) 2fr;
 `
 
 const HeaderMenu = styled.section`
-  width: 100%;
+  /* width: 100%; */
   height: calc(100vh - 0.8rem);
   flex-direction: column;
-  position: relative;
+  /* position: relative; */
+  position: fixed;
+  width: 16rem;
   margin-top: 0.8rem;
 
   @media screen and (max-width: 900px) {
     height: 60px;
     margin-top: 0;
+    width: 100%;
+    background-color: var(--primaryColor);
   }
 `
 
@@ -80,15 +84,21 @@ const WrapperIconBars = styled.div`
 `
 
 const WrapperOutlet = styled.main`
-  width: calc(100% - 1rem);
-  height: calc(100vh - 1rem);
-  margin: 0.5rem;
+  /* width: calc(100% - 1rem); */
+  width: calc(100vw - 17.25rem);
+  min-height: calc(100vh - 1rem);
+  margin: 0.5rem 0.5rem 0.5rem 16.5rem;
   padding: 1rem;
   border-radius: var(--borderRadiusGeneral);
   background: var(--secondaryColor);
 
   @media screen and (max-width: 900px) {
-    height: calc(100vh - calc(1rem + 60px));
+    /* height: calc(100vh - calc(1rem + 60px)); */
+    margin-top: calc(60px + 0.5rem);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: calc(100% - 1rem);
   }
 `
 

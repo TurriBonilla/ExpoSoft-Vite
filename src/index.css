@@ -55,6 +55,28 @@ body {
   min-height: 100vh;
   font-size: 16px;
   background-color: var(--primaryColor);
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar{
+  -webkit-appearance: none;
+}
+
+body::-webkit-scrollbar:vertical{
+  width: 5px;
+}
+
+/* body::-webkit-scrollbar-button:increment, body::-webkit-scrollbar-button{
+  display: none;
+} */
+
+body::-webkit-scrollbar-thumb{
+  border-radius: 20px;
+	background-color: var(--success);
+}
+
+body::-webkit-scrollbar-track{
+	border-radius: 10px;
 }
 
 svg {
