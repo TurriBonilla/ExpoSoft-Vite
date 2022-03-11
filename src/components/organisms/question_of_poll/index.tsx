@@ -1,28 +1,42 @@
-import { style } from './style'
-import { MdOutlineRadioButtonUnchecked, MdOutlineRadioButtonChecked } from 'react-icons/md'
 import { useState } from 'react'
+
+import { style } from './style'
+import {
+	MdOutlineRadioButtonUnchecked,
+	MdOutlineRadioButtonChecked,
+} from 'react-icons/md'
+
 const { WrapperQuestion, Answer } = style
 
-const prueba = [
-    {},
-    {},
-    {},
-    {}
-]
+interface QuestionOfPollProps {
+	title: string
+	options: Array<any>
+	moduleId: string
+}
 
-const QuestionOfPoll = () => {
-    const [select, setSelect] = useState(-1)
-    return (
-        <WrapperQuestion>
-            <span>Question</span>
-            {prueba.map((data, key: number) => (
-                <Answer key={key} onClick={() => setSelect(key)} isSelected={select === key ? true : false}>
-                    {select === key ? <MdOutlineRadioButtonChecked /> : <MdOutlineRadioButtonUnchecked />}
-                    <label>first question</label>
-                </Answer>
-            ))}
-        </WrapperQuestion>
-    )
+const QuestionOfPoll = (props: QuestionOfPollProps) => {
+	const { title, options, moduleId } = props
+	const [select, setSelect] = useState<string>("")
+
+	return (
+		<WrapperQuestion>
+			<span>{title}</span>
+			{options.map((data: any, key: number) => (
+				<Answer
+					key={`${moduleId}-${key}`}
+					onClick={() => setSelect(`${moduleId}-${key}`)}
+					isSelected={select === `${moduleId}-${key}` ? true : false}
+				>
+					{select === `${moduleId}-${key}` ? (
+						<MdOutlineRadioButtonChecked />
+					) : (
+						<MdOutlineRadioButtonUnchecked />
+					)}
+					<label>{data.option}</label>
+				</Answer>
+			))}
+		</WrapperQuestion>
+	)
 }
 
 export default QuestionOfPoll
