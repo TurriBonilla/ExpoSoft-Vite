@@ -1,18 +1,24 @@
-import { Button } from './style'
+import { ColorInterface } from 'interfaces'
+import styled from 'styled-components'
 
-interface ButtonRouterProps {
-  type: string
-  route: string
-  tag: string
-}
+const ButtonRouter = styled.button<ColorInterface>`
+	font-size: 1rem;
+	color: var(--secondaryColor);
+	/* width: fit-content; */
+	width: 100%;
+	text-align: center;
+	padding: 0.5rem 1rem;
+	margin: 0.5rem 0;
+	border-radius: var(--borderRadius);
 
-const ButtonRouter = (props: ButtonRouterProps) => {
-  const { type, route, tag } = props
-  return (
-    <Button type={type} to={route}>
-      {tag}
-    </Button>
-  )
-}
+	${({ color }) =>
+		color === 'primary' &&
+		`
+			background-color: var(--primary);
+			&:hover {
+				background-color: var(--primaryHover);
+			}
+	`}
+`
 
 export default ButtonRouter

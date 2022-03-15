@@ -1,11 +1,11 @@
 import { MdOutlineDirectionsBoat } from 'react-icons/md'
-import { style } from './style'
+import { Logotipo } from './style'
 
 const Brand = () => {
   return (
-    <style.Logotipo to='/'>
+    <Logotipo to='/'>
       <MdOutlineDirectionsBoat />
-    </style.Logotipo>
+    </Logotipo>
   )
 }
 

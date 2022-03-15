@@ -18,7 +18,7 @@ const Divider = ({ children }: DividerProps) => {
             reservados.
           </style.Copyright>
         </style.Form>
-        <style.ContainerMap className={'hidden'}>
+        <style.ContainerMap className='hidden'>
           <img src={Map} alt='Mapa de Exportación' />
         </style.ContainerMap>
       </style.WrapperForm>

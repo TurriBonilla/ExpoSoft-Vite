@@ -1,11 +1,6 @@
-import { style } from './style'
+import styled from 'styled-components'
 
-interface TitleProps {
-  title: string
-}
-
-const Title = ({ title }: TitleProps) => {
-  return <style.Title>{title}</style.Title>
-}
-
+const Title = styled.h3`
+	color: var(--tertiaryColor);
+`
 export default Title

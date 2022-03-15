@@ -7,7 +7,7 @@ import { Outlet } from 'react-router-dom'
 import { style } from './style'
 
 const Home = () => {
-  const [showMenu, setShowMenu] = useState(false)
+  const [showMenu, setShowMenu] = useState<boolean>(false)
   return (
     <style.Container>
       <style.HeaderMenu>

@@ -3,12 +3,12 @@ import { Button } from 'components/atoms'
 import { Input } from 'components/atoms'
 import { Divider } from 'components/templates'
 import { validateLogin } from './login'
-import { ICredentials } from 'interfaces'
+import { CredentialsInterface } from 'interfaces'
 import { useNavigate } from 'react-router-dom'
 import { style } from './style'
 
 const Login = () => {
-	const [credentials, setCredentials] = useState<ICredentials>({
+	const [credentials, setCredentials] = useState<CredentialsInterface>({
 		email: '',
 		password: '',
 	})
@@ -36,14 +36,17 @@ const Login = () => {
 				/>
 			</style.WrapperLabelAndInput>
 			<Button
-				tag='Ingresar'
 				type='button'
-				typeButton='primary'
+				color='primary'
 				onClick={() => validateLogin(credentials, navigate)}
-			/>
+			>
+				Ingresar
+			</Button>
 			<style.TextRegister>
 				¿Aún no tienes una cuenta? &nbsp;
-				<style.LinkRegister to='/registro'>Regístrate aquí.</style.LinkRegister>
+				<style.LinkRegister to='/registro'>
+					Regístrate aquí.
+				</style.LinkRegister>
 			</style.TextRegister>
 		</Divider>
 	)

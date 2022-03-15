@@ -28,7 +28,7 @@ const Poll = () => {
 		<Container>
 			<Header>
 				<p>Necessary survey to calculate your export level</p>
-				<Title title='Calculate your export level' />
+				<Title>Calculate your export level</Title>
 			</Header>
 			<WrapperForm>
 				<div>

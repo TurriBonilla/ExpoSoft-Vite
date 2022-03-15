@@ -1,14 +1,14 @@
 import { CardHelpProps } from 'interfaces'
-import { style } from './style'
+import { WrapperCard, Title } from './style'
 
 const CardHelp = (props: CardHelpProps) => {
-  const { title, icon, isActive, onClick } = props
-  return (
-    <style.WrapperCard onClick={onClick} isActive={isActive}>
-      {icon}
-      <style.Title isActive={isActive}>{title}</style.Title>
-    </style.WrapperCard>
-  )
+	const { title, icon, isActive, onClick } = props
+	return (
+		<WrapperCard onClick={onClick} isActive={isActive}>
+			{icon}
+			<Title isActive={isActive}>{title}</Title>
+		</WrapperCard>
+	)
 }
 
 export default CardHelp

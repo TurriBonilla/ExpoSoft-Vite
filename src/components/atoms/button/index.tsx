@@ -1,20 +1,23 @@
-import { MouseEvent } from 'react'
-import { Style } from './style'
+import styled from 'styled-components'
+import { ColorInterface } from 'interfaces'
 
-interface ButtonProps {
-  type: string
-  typeButton: string
-  tag: string
-  onClick: (e: MouseEvent<HTMLButtonElement>) => void
-}
+const Button = styled.button<ColorInterface>`
+	font-size: 1rem;
+	color: var(--secondaryColor);
+	width: 100%;
+	text-align: center;
+	padding: 0.5rem 1rem;
+	margin: 0.5rem 0;
+	border-radius: var(--borderRadius);
+	border: none;
+	cursor: pointer;
 
-const Button = (props: ButtonProps) => {
-  const { typeButton, type, tag, onClick } = props
-  return (
-    <Style typeButton={typeButton} type={type} onClick={onClick}>
-      {tag}
-    </Style>
-  )
-}
-
+	${({ color }) =>
+		color === 'primary' &&
+		`
+			background-color: var(--primary);
+			&:hover {
+				background-color: var(--primaryHover);
+			}`}
+`
 export default Button

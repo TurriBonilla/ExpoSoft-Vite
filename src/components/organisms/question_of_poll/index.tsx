@@ -1,12 +1,10 @@
 import { useState } from 'react'
 
-import { style } from './style'
+import { WrapperQuestion, Answer } from './style'
 import {
 	MdOutlineRadioButtonUnchecked,
 	MdOutlineRadioButtonChecked,
 } from 'react-icons/md'
-
-const { WrapperQuestion, Answer } = style
 
 interface QuestionOfPollProps {
 	title: string
@@ -16,7 +14,7 @@ interface QuestionOfPollProps {
 
 const QuestionOfPoll = (props: QuestionOfPollProps) => {
 	const { title, options, moduleId } = props
-	const [select, setSelect] = useState<string>("")
+	const [select, setSelect] = useState<string>('')
 
 	return (
 		<WrapperQuestion>

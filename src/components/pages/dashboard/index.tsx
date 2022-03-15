@@ -1,8 +1,7 @@
 import { Tip } from 'components/atoms'
 import { PollResults, ResultModule } from 'components/organisms'
 import { dataPoll } from 'const'
-import { style } from './style'
-const { ContainerDashboard, Wrapper } = style
+import { ContainerDashboard, Wrapper } from './style'
 
 const Dashboard = () => {
 	return (
