@@ -27,12 +27,15 @@ export interface OnClickInterface<T> {
 	onClick: MouseEventHandler<T>
 }
 
-export interface CardHelpProps
-	extends OnClickInterface<HTMLButtonElement>,
-		IsActiveInterface {
+export interface DataCardHelpProps {
 	title: string
 	icon: JSX.Element
 }
+
+export interface CardHelpProps
+	extends OnClickInterface<HTMLButtonElement>,
+		IsActiveInterface,
+		DataCardHelpProps {}
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	setState: Dispatch<SetStateAction<any>>
@@ -49,7 +52,7 @@ export interface ResultModuleInterface {
 	title: string
 }
 
-export interface ColorInterface { 
+export interface ColorInterface {
 	color: 'primary' | 'secondary' | 'error' | 'alert' | 'success'
 }
 

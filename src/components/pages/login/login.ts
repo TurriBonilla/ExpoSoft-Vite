@@ -1,9 +1,9 @@
 import { NavigateFunction } from 'react-router-dom'
-import { ICredentials } from 'interfaces'
+import { CredentialsInterface } from 'interfaces'
 import { validateEmail } from 'utils'
 
 export const validateLogin = (
-	credentials: ICredentials,
+	credentials: CredentialsInterface,
 	navigate: NavigateFunction
 ) => {
 	const { email, password } = credentials

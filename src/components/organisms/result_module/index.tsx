@@ -1,8 +1,8 @@
 import { Title } from 'components/atoms'
-import { IResultModule } from 'interfaces'
+import { ResultModuleInterface } from 'interfaces'
 import { Container } from './style'
 
-const ResultModule = (props: IResultModule) => {
+const ResultModule = (props: ResultModuleInterface) => {
 	const { title } = props
 	return (
 		<Container>
