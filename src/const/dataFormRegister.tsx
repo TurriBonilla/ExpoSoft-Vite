@@ -1,12 +1,12 @@
 const dataFormRegister = [
   {
     name: 'name',
-    placeholder: 'Nombre',
+    placeholder: 'Nombre de la empresa',
     type: 'text',
   },
   {
-    name: 'surname',
-    placeholder: 'Apellidos',
+    name: 'nit',
+    placeholder: 'NIT',
     type: 'text',
   },
   {

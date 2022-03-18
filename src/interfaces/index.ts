@@ -5,12 +5,14 @@ export interface CredentialsInterface {
   password: string
 }
 
-export interface RegisterInterface {
+export interface RegisterData {
   name: string
-  surname: string
+  nit: string
   email: string
-  confirmEmail: string
   password: string
+}
+export interface RegisterInterface extends RegisterData {
+  confirmEmail: string
   confirmPassword: string
 }
 

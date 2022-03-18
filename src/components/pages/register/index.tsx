@@ -18,7 +18,7 @@ interface DataFormRegisterAttributes {
 const Register = () => {
   const [register, setRegister] = useState<RegisterInterface>({
     name: '',
-    surname: '',
+    nit: '',
     email: '',
     confirmEmail: '',
     password: '',
