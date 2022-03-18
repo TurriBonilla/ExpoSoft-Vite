@@ -8,7 +8,7 @@ class AuthService {
   }
 
   register(data: RegisterData, handle: Function) {
-    return ExpoApi.post('/api/auth', data).then(res => handle(res))
+    return ExpoApi.post('/api/auth', data).then(res => handle(res.data))
   }
 }
 
