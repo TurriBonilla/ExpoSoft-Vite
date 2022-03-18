@@ -8,9 +8,10 @@ import { validateRegister } from './register'
 import {
   WrapperItems,
   WrapperLabelAndInput,
-  TextRegister,
-  LinkRegister
+  TextRegister
 } from './style'
+
+import { LinkRegister } from '../login/style'
 
 interface DataFormRegisterAttributes {
   name: string
@@ -53,7 +54,7 @@ const Register = () => {
       </>
       <Button
         type='button'
-        color='primary'
+        color='success'
         onClick={() => validateRegister(register, navigate)}
       >
         Registrarse

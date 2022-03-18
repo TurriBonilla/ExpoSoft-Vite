@@ -13,11 +13,21 @@ const Button = styled.button<ColorInterface>`
 	cursor: pointer;
 
 	${({ color }) =>
-		color === 'primary' &&
-		`
+		color === 'primary' ?
+			`
 			background-color: var(--primary);
 			&:hover {
 				background-color: var(--primaryHover);
-			}`}
+			}
+		`
+			:
+			color === 'success' &&
+			`
+			background-color: var(--success);
+			&:hover {
+				background-color: var(--successHover);
+			}
+		`
+	}
 `
 export default Button

@@ -7,10 +7,10 @@ import { CredentialsInterface } from 'interfaces'
 import { useNavigate } from 'react-router-dom'
 import {
   WrapperLabelAndInput,
-  Label,
-  TextRegister,
   LinkRegister
 } from './style'
+
+import { TextRegister } from '../register/style'
 
 const Login = () => {
   const [credentials, setCredentials] = useState<CredentialsInterface>({
@@ -42,7 +42,7 @@ const Login = () => {
       </WrapperLabelAndInput>
       <Button
         type='button'
-        color='primary'
+        color='success'
         onClick={() => validateLogin(credentials, navigate)}
       >
         Ingresar
