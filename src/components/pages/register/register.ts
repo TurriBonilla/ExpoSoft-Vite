@@ -1,12 +1,10 @@
 import authService from 'api/auth.service'
-import { RegisterInterface } from 'interfaces'
-import { NavigateFunction } from 'react-router-dom'
+import { RegisterInterface, ResponseAuth } from 'interfaces'
 import { validateEmail, validateLetters } from 'utils'
 
-export const validateRegister = (business: RegisterInterface, navigate: NavigateFunction) => {
-  const { name, email, confirmEmail, password, confirmPassword } = business
+export const validateRegister = (business: RegisterInterface, handleFunction: Function) => {
+  const { name, nit, email, confirmEmail, password, confirmPassword } = business
   const data = { ...business, confirmEmail: undefined, confirmPassword: undefined }
-  console.log(data)
   // if (name === '') {
   //   alert('Recuerda ingresar tu nombre')
   //   return
@@ -57,6 +55,14 @@ export const validateRegister = (business: RegisterInterface, navigate: Navigate
   //   return
   // }
   // alert('Registro exitoso')
-  authService.register(data, console.log)
-  return navigate('/login')
+  authService.register(data, (res: any) => handleRegisterData(res, handleFunction))
+}
+
+const handleRegisterData = (response: ResponseAuth, handleFunction: Function) => {
+  const { statusCode, token, message, nit } = response
+
+  if (statusCode === 201) {
+    handleFunction({ token, nit })
+  }
+  alert(message)
 }
