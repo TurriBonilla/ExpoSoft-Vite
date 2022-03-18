@@ -34,7 +34,7 @@ const Router = () => {
 			element: <Register />,
 		},
 		{
-			path: '*',
+			path: '/404',
 			element: <p>not found</p>,
 		},
 	])

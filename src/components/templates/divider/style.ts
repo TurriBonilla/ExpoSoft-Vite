@@ -12,11 +12,29 @@ export const WrapperBody = styled.div`
 `
 
 export const WrapperForm = styled.div`
-  width: 40%;
+width: 40%;
+background-color: var(--secondaryColor);
+border-radius: var(--borderRadiusGeneral);
+margin: 1rem;
+${FlexCenter};
+position: relative;
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  width: 100%;
+  justify-content: space-evenly;
+
+  .hidden {
+    display: flex;
+  }
+}
+  /* width: 40%;
   background-color: var(--secondaryColor);
   ${FlexCenter};
   flex-direction: column;
-  position: relative;
   z-index: 1;
 
   .hidden {
@@ -29,59 +47,62 @@ export const WrapperForm = styled.div`
     .hidden {
       display: flex;
     }
-  }
+  } */
 `
 
 export const WrapperBrand = styled.div`
-  width: 60%;
-  ${FlexCenter};
-  @media screen and (max-width: 900px) {
-    display: none;
-  }
+width: 60%;
+${FlexCenter};
+
+@media screen and (max-width: 900px) {
+  display: none;
+}
 `
 
 export const Form = styled.form`
-  width: 75%;
-  ${FlexCenter};
-  flex-direction: column;
-  gap: 0.25rem;
-  z-index: 1;
+width: 75%;
+${FlexCenter};
+flex-direction: column;
+gap: 0.25rem;
+z-index: 1;
 
-  h3 {
-    font-size: 1.5rem;
-  }
+h3 {
+  font-size: 1.5rem;
+  color: var(--success);
+}
 
-  @media screen and (max-width: 900px) {
-    width: 65%;
-  }
+@media screen and (max-width: 900px) {
+  width: 65%;
+}
 `
 
 export const Copyright = styled.footer`
-  position: absolute;
-  bottom: 0.5rem;
-  font-size: var(--fontSizeSmall);
-  color: var(--grayColor);
+position: absolute;
+bottom: 0.5rem;
+font-size: var(--fontSizeSmall);
+color: var(--grayColor);
 `
 
 export const ContainerMap = styled.div`
+width: 100%;
+height: 100%;
+${FlexCenter};
+
+img {
   width: 100%;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 900px) {
   height: 100%;
-  ${FlexCenter};
+  width: 100%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 
   img {
-    width: 100%;
-    opacity: 0.7;
+    opacity: 0.25;
   }
-
-  @media screen and (max-width: 900px) {
-    height: 100%;
-    width: 200%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    img {
-      opacity: 0.25;
-    }
-  }
+}
 `

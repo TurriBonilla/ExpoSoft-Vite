@@ -23,6 +23,7 @@
   --hover: #e9e8eb;
   --active: #404453;
   --success: #508b4e;
+  --successHover: rgba(80, 139, 78, .7);
   --warning: #ddce00;
   --alert: #d63333;
   --info: #0092cc;
