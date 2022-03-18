@@ -58,3 +58,11 @@ export interface FaqsProps {
 export interface IsActiveInterface {
   isActive: boolean
 }
+export interface ResponseData {
+  message: string
+  statusCode: number
+}
+export interface ResponseAuth extends ResponseData {
+  nit?: string | null
+  token?: string | null
+}
