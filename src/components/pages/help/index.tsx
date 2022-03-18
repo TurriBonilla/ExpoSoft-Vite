@@ -3,34 +3,20 @@ import { dataCardHelp } from 'const'
 import { DataCardHelpProps } from 'interfaces'
 import { useState } from 'react'
 import { handleOption } from './Help'
-import { style } from './style'
-
-
+import { Wrapper, CardContainer, InfoContainer } from './style'
 
 const Help = () => {
-	const [optionHelp, setOptionHelp] = useState<number>(0)
-	return (
-		<style.Wrapper>
-			<style.CardContainer>
-				{dataCardHelp.map((card: DataCardHelpProps, key: number) => (
-					<CardHelp
-						key={key}
-						title={card.title}
-						icon={card.icon}
-						isActive={key === optionHelp}
-						onClick={() => setOptionHelp(handleOption(key))}
-					/>
-				))}
-			</style.CardContainer>
-			<style.InfoContainer>
-				{optionHelp === 0 ? (
-					<HelpInformation />
-				) : (
-					optionHelp === 1 && <Faqs />
-				)}
-			</style.InfoContainer>
-		</style.Wrapper>
-	)
+  const [optionHelp, setOptionHelp] = useState<number>(0)
+  return (
+    <Wrapper>
+      <CardContainer>
+        {dataCardHelp.map((card: DataCardHelpProps, key: number) => (
+          <CardHelp key={key} title={card.title} icon={card.icon} isActive={key === optionHelp} onClick={() => setOptionHelp(handleOption(key))} />
+        ))}
+      </CardContainer>
+      <InfoContainer>{optionHelp === 0 ? <HelpInformation /> : optionHelp === 1 && <Faqs />}</InfoContainer>
+    </Wrapper>
+  )
 }
 
 export default Help

@@ -1,6 +1,6 @@
 import { Map } from 'assets'
 import { Title } from 'components/atoms'
-import { style } from './style'
+import { WrapperBody, WrapperBrand, WrapperForm, Form, Copyright, ContainerMap } from './style'
 
 interface DividerProps {
   children: JSX.Element | JSX.Element[]
@@ -8,27 +8,47 @@ interface DividerProps {
 
 const Divider = ({ children }: DividerProps) => {
   return (
-    <style.WrapperBody>
-      <style.WrapperForm>
-        <style.Form>
-          <Title title='ExpoSoft' />
+    <WrapperBody>
+      <WrapperForm>
+        <Form>
+          <Title>ExpoSoft</Title>
           {children}
-          <style.Copyright>
-            Copyright &copy; {new Date().getFullYear()} ExpoSoft | Derechos
-            reservados.
-          </style.Copyright>
-        </style.Form>
-        <style.ContainerMap className='hidden'>
+          <Copyright>Copyright &copy; {new Date().getFullYear()} ExpoSoft | Derechos reservados.</Copyright>
+        </Form>
+        <ContainerMap className='hidden'>
           <img src={Map} alt='Mapa de Exportación' />
-        </style.ContainerMap>
-      </style.WrapperForm>
-      <style.WrapperBrand>
-        <style.ContainerMap>
+        </ContainerMap>
+      </WrapperForm>
+      <WrapperBrand>
+        <ContainerMap>
           <img src={Map} alt='Mapa de Exportación' />
-        </style.ContainerMap>
-      </style.WrapperBrand>
-    </style.WrapperBody>
+        </ContainerMap>
+      </WrapperBrand>
+    </WrapperBody>
   )
 }
 
 export default Divider
+
+{
+  /* <WrapperBody>
+    <WrapperForm>
+      <Form>
+        <Title title='ExpoSoft' />
+        {children}
+        <Copyright>
+          Copyright &copy; {new Date().getFullYear()} ExpoSoft | Derechos
+          reservados.
+        </Copyright>
+      </Form>
+      <ContainerMap className='hidden'>
+        <img src={Map} alt='Mapa de Exportación' />
+      </ContainerMap>
+    </WrapperForm>
+    <WrapperBrand>
+      <ContainerMap>
+        <img src={Map} alt='Mapa de Exportación' />
+      </ContainerMap>
+    </WrapperBrand>
+</WrapperBody> */
+}

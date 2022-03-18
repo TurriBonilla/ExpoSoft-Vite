@@ -23,6 +23,7 @@
   --hover: #e9e8eb;
   --active: #404453;
   --success: #508b4e;
+  --successHover: rgba(80, 139, 78, 0.7);
   --warning: #ddce00;
   --alert: #d63333;
   --info: #0092cc;
@@ -58,11 +59,11 @@ body {
   overflow-y: scroll;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   -webkit-appearance: none;
 }
 
-body::-webkit-scrollbar:vertical{
+body::-webkit-scrollbar:vertical {
   width: 5px;
 }
 
@@ -70,13 +71,13 @@ body::-webkit-scrollbar:vertical{
   display: none;
 } */
 
-body::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb {
   border-radius: 20px;
-	background-color: var(--success);
+  background-color: var(--success);
 }
 
-body::-webkit-scrollbar-track{
-	border-radius: 10px;
+body::-webkit-scrollbar-track {
+  border-radius: 10px;
 }
 
 svg {

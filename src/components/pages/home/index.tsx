@@ -4,30 +4,26 @@ import { handleShowMenu } from 'components/organisms/sidebar/sidebar'
 import { useState } from 'react'
 import { MdMenu, MdOutlineMenuOpen } from 'react-icons/md'
 import { Outlet } from 'react-router-dom'
-import { style } from './style'
+import { Container, HeaderMenu, WrapperMenu, WrapperIconBars, WrapperOutlet } from './style'
 
 const Home = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false)
   return (
-    <style.Container>
-      <style.HeaderMenu>
-        <style.WrapperMenu>
+    <Container>
+      <HeaderMenu>
+        <WrapperMenu>
           <div className='ContainerBrand'>
             <Brand />
             <h1>ExpoSoft</h1>
           </div>
-          <style.WrapperIconBars
-            onClick={() => setShowMenu(handleShowMenu(showMenu))}
-          >
-            {showMenu ? <MdOutlineMenuOpen /> : <MdMenu />}
-          </style.WrapperIconBars>
-        </style.WrapperMenu>
+          <WrapperIconBars onClick={() => setShowMenu(handleShowMenu(showMenu))}>{showMenu ? <MdOutlineMenuOpen /> : <MdMenu />}</WrapperIconBars>
+        </WrapperMenu>
         <Sidebar showMenu={showMenu} />
-      </style.HeaderMenu>
-      <style.WrapperOutlet>
+      </HeaderMenu>
+      <WrapperOutlet>
         <Outlet />
-      </style.WrapperOutlet>
-    </style.Container>
+      </WrapperOutlet>
+    </Container>
   )
 }
 

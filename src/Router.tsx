@@ -9,30 +9,34 @@ const Router = () => {
       children: [
         {
           path: '/',
-          element: <Navigate to='/dashboard' />
+          element: <Navigate to='/dashboard' replace />,
         },
         {
           path: '/dashboard',
-          element: <Dashboard />
+          element: <Dashboard />,
         },
         {
           path: '/encuesta',
-          element: <Poll />
+          element: <Poll />,
         },
         {
           path: '/ayuda',
-          element: <Help />
-        }
-      ]
+          element: <Help />,
+        },
+      ],
     },
     {
       path: '/login',
-      element: <Login />
+      element: <Login />,
     },
     {
       path: '/registro',
-      element: <Register />
-    }
+      element: <Register />,
+    },
+    {
+      path: '/404',
+      element: <p>not found</p>,
+    },
   ])
 }
 

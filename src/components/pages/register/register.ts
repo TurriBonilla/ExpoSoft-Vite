@@ -1,73 +1,62 @@
+import authService from 'api/auth.service'
 import { RegisterInterface } from 'interfaces'
 import { NavigateFunction } from 'react-router-dom'
 import { validateEmail, validateLetters } from 'utils'
 
-export const validateRegister = (
-	register: RegisterInterface,
-	navigate: NavigateFunction
-) => {
-	const { name, surname, email, confirmEmail, password, confirmPassword } =
-		register
+export const validateRegister = (business: RegisterInterface, navigate: NavigateFunction) => {
+  const { name, email, confirmEmail, password, confirmPassword } = business
+  const data = { ...business, confirmEmail: undefined, confirmPassword: undefined }
+  console.log(data)
+  // if (name === '') {
+  //   alert('Recuerda ingresar tu nombre')
+  //   return
+  // }
 
-	if (name === '') {
-		alert('Recuerda ingresar tu nombre')
-		return
-	}
+  // if (validateLetters(name)) {
+  //   alert('El nombre que ingresaste no es válido')
+  //   return
+  // }
 
-	if (validateLetters(name)) {
-		alert('El nombre que ingresaste no es válido')
-		return
-	}
+  // if (email === '') {
+  //   alert('Recuerda ingresar un email')
+  //   return
+  // }
 
-	if (surname === '') {
-		alert('Recuerda ingresar tu apellido')
-		return
-	}
+  // if (validateEmail(email)) {
+  //   alert('El email que ingresaste no es válido')
+  //   return
+  // }
 
-	if (validateLetters(surname)) {
-		alert('El apellido que ingresaste no es válido')
-		return
-	}
+  // if (confirmEmail === '') {
+  //   alert('Recuerda confirmar tu email')
+  //   return
+  // }
 
-	if (email === '') {
-		alert('Recuerda ingresar un email')
-		return
-	}
+  // if (confirmEmail !== email) {
+  //   alert('Los emails no coinciden')
+  //   return
+  // }
 
-	if (validateEmail(email)) {
-		alert('El email que ingresaste no es válido')
-		return
-	}
+  // if (password === '') {
+  //   alert('Recuerda ingresar una contraseña')
+  //   return
+  // }
 
-	if (confirmEmail === '') {
-		alert('Recuerda confirmar tu email')
-		return
-	}
+  // if (password.length < 6) {
+  //   alert('La contraseña debe contener mínimo seis caracteres')
+  //   return
+  // }
 
-	if (confirmEmail !== email) {
-		alert('Los emails no coinciden')
-		return
-	}
+  // if (confirmPassword === '') {
+  //   alert('Recuerda confirmar tu contraseña')
+  //   return
+  // }
 
-	if (password === '') {
-		alert('Recuerda ingresar una contraseña')
-		return
-	}
-
-	if (password.length < 6) {
-		alert('La contraseña debe contener mínimo seis caracteres')
-		return
-	}
-
-	if (confirmPassword === '') {
-		alert('Recuerda confirmar tu contraseña')
-		return
-	}
-
-	if (confirmPassword !== password) {
-		alert('Las contraseñas no coinciden')
-		return
-	}
-	alert('Registro exitoso')
-	return navigate('/login')
+  // if (confirmPassword !== password) {
+  //   alert('Las contraseñas no coinciden')
+  //   return
+  // }
+  // alert('Registro exitoso')
+  authService.register(data, console.log)
+  return navigate('/login')
 }
