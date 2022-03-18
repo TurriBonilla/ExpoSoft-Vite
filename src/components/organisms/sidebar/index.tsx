@@ -1,4 +1,10 @@
-import { style } from './style'
+import {
+  WrapperLinks,
+  LinkItem,
+  WraperProfile,
+  WrapperImageProfile,
+  WrapperInformation
+} from './style'
 import { dataSidebar } from 'const'
 import { SidebarProps } from 'interfaces'
 import { MdOutlinePowerSettingsNew } from 'react-icons/md'
@@ -6,22 +12,22 @@ import { MdOutlinePowerSettingsNew } from 'react-icons/md'
 const Sidebar = (props: SidebarProps) => {
   const { showMenu } = props
   return (
-    <style.WrapperLinks show={showMenu}>
+    <WrapperLinks show={showMenu}>
       {dataSidebar.map((button: any, key: number) => (
-        <style.LinkItem key={key} to={button.route}>
+        <LinkItem key={key} to={button.route}>
           {button.icon}
           {button.tag}
-        </style.LinkItem>
+        </LinkItem>
       ))}
-      <style.WraperProfile show={showMenu}>
-        <style.WrapperImageProfile>WS</style.WrapperImageProfile>
-        <style.WrapperInformation>
+      <WraperProfile show={showMenu}>
+        <WrapperImageProfile>WS</WrapperImageProfile>
+        <WrapperInformation>
           <p>S&L System LTDA</p>
           <p className='companyOwner'>Walter Santander</p>
-        </style.WrapperInformation>
+        </WrapperInformation>
         <MdOutlinePowerSettingsNew />
-      </style.WraperProfile>
-    </style.WrapperLinks>
+      </WraperProfile>
+    </WrapperLinks>
   )
 }
 
