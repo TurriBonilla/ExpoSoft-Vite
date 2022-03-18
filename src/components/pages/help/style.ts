@@ -1,20 +1,20 @@
 import styled from 'styled-components'
 
-const Wrapper = styled.main`
+export const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-`;
+`
 
-const CardContainer = styled.div`
+export const CardContainer = styled.div`
   height: calc(30% - 0.5rem);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 `
 
-const InfoContainer = styled.div`
+export const InfoContainer = styled.div`
   height: calc(70% - 0.5rem);
   border-radius: var(--borderRadiusGeneral);
   background: var(--whiteColor);
@@ -32,9 +32,3 @@ const InfoContainer = styled.div`
     opacity: 0.7;
   }
 `
-
-export const style = {
-  Wrapper,
-  CardContainer,
-  InfoContainer
-}

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-const WrapperItems = styled.div`
+export const WrapperItems = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -14,17 +14,17 @@ const WrapperItems = styled.div`
   }
 `
 
-const WrapperLabelAndInput = styled.div`
+export const WrapperLabelAndInput = styled.div`
   width: 100%;
 `
 
-const TextRegister = styled.p`
+export const TextRegister = styled.p`
   color: var(--grayColor);
   font-size: var(--fontSizeSmall);
   text-align: center;
 `
 
-const LinkRegister = styled(Link)`
+export const LinkRegister = styled(Link)`
   font-size: var(--fontSizeSmall);
   color: var(--primary);
   &:hover {
@@ -32,10 +32,3 @@ const LinkRegister = styled(Link)`
     text-decoration: underline;
   }
 `
-
-export const style = {
-  WrapperItems,
-  WrapperLabelAndInput,
-  TextRegister,
-  LinkRegister
-}
