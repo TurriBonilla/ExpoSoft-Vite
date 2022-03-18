@@ -1,13 +1,6 @@
 import { Map } from 'assets'
 import { Title } from 'components/atoms'
-import {
-  WrapperBody,
-  WrapperBrand,
-  WrapperForm,
-  Form,
-  Copyright,
-  ContainerMap
-} from './style'
+import { WrapperBody, WrapperBrand, WrapperForm, Form, Copyright, ContainerMap } from './style'
 
 interface DividerProps {
   children: JSX.Element | JSX.Element[]
@@ -20,10 +13,7 @@ const Divider = ({ children }: DividerProps) => {
         <Form>
           <Title>ExpoSoft</Title>
           {children}
-          <Copyright>
-            Copyright &copy; {new Date().getFullYear()} ExpoSoft | Derechos
-            reservados.
-          </Copyright>
+          <Copyright>Copyright &copy; {new Date().getFullYear()} ExpoSoft | Derechos reservados.</Copyright>
         </Form>
         <ContainerMap className='hidden'>
           <img src={Map} alt='Mapa de Exportación' />
@@ -40,7 +30,8 @@ const Divider = ({ children }: DividerProps) => {
 
 export default Divider
 
-{/* <WrapperBody>
+{
+  /* <WrapperBody>
     <WrapperForm>
       <Form>
         <Title title='ExpoSoft' />
@@ -59,4 +50,5 @@ export default Divider
         <img src={Map} alt='Mapa de Exportación' />
       </ContainerMap>
     </WrapperBrand>
-</WrapperBody> */}
+</WrapperBody> */
+}

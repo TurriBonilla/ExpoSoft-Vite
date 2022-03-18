@@ -5,11 +5,7 @@ import { RegisterInterface } from 'interfaces'
 import { HTMLInputTypeAttribute, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { validateRegister } from './register'
-import {
-  WrapperItems,
-  WrapperLabelAndInput,
-  TextRegister
-} from './style'
+import { WrapperItems, WrapperLabelAndInput, TextRegister } from './style'
 
 import { LinkRegister } from '../login/style'
 
@@ -26,37 +22,23 @@ const Register = () => {
     email: '',
     confirmEmail: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
   })
   const navigate = useNavigate()
 
   return (
     <Divider>
-      <TextRegister>
-        Regístrate para conocer el nivel de potencial exportador de tu empresa.
-      </TextRegister>
+      <TextRegister>Regístrate para conocer el nivel de potencial exportador de tu empresa.</TextRegister>
       <>
         <WrapperItems>
-          {dataFormRegister.map(
-            (element: DataFormRegisterAttributes, key: number) => (
-              <WrapperLabelAndInput key={key}>
-                <Input
-                  id={element.name}
-                  name={element.name}
-                  placeholder={element.placeholder}
-                  setState={setRegister}
-                  type={element.type}
-                />
-              </WrapperLabelAndInput>
-            )
-          )}
+          {dataFormRegister.map((element: DataFormRegisterAttributes, key: number) => (
+            <WrapperLabelAndInput key={key}>
+              <Input id={element.name} name={element.name} placeholder={element.placeholder} setState={setRegister} type={element.type} />
+            </WrapperLabelAndInput>
+          ))}
         </WrapperItems>
       </>
-      <Button
-        type='button'
-        color='success'
-        onClick={() => validateRegister(register, navigate)}
-      >
+      <Button type='button' color='success' onClick={() => validateRegister(register, navigate)}>
         Registrarse
       </Button>
       <TextRegister>

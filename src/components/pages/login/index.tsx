@@ -5,17 +5,14 @@ import { Divider } from 'components/templates'
 import { validateLogin } from './login'
 import { CredentialsInterface } from 'interfaces'
 import { useNavigate } from 'react-router-dom'
-import {
-  WrapperLabelAndInput,
-  LinkRegister
-} from './style'
+import { WrapperLabelAndInput, LinkRegister } from './style'
 
 import { TextRegister } from '../register/style'
 
 const Login = () => {
   const [credentials, setCredentials] = useState<CredentialsInterface>({
     email: '',
-    password: ''
+    password: '',
   })
 
   const navigate = useNavigate()
@@ -23,28 +20,12 @@ const Login = () => {
   return (
     <Divider>
       <WrapperLabelAndInput>
-        <Input
-          id='email'
-          name='email'
-          placeholder='Email'
-          setState={setCredentials}
-          type='email'
-        />
+        <Input id='email' name='email' placeholder='Email' setState={setCredentials} type='email' />
       </WrapperLabelAndInput>
       <WrapperLabelAndInput>
-        <Input
-          id='password'
-          name='password'
-          placeholder='Contraseña'
-          setState={setCredentials}
-          type='password'
-        />
+        <Input id='password' name='password' placeholder='Contraseña' setState={setCredentials} type='password' />
       </WrapperLabelAndInput>
-      <Button
-        type='button'
-        color='success'
-        onClick={() => validateLogin(credentials, navigate)}
-      >
+      <Button type='button' color='success' onClick={() => validateLogin(credentials, navigate)}>
         Ingresar
       </Button>
       <TextRegister>

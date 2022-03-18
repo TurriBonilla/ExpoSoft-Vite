@@ -11,18 +11,10 @@ const Help = () => {
     <Wrapper>
       <CardContainer>
         {dataCardHelp.map((card: DataCardHelpProps, key: number) => (
-          <CardHelp
-            key={key}
-            title={card.title}
-            icon={card.icon}
-            isActive={key === optionHelp}
-            onClick={() => setOptionHelp(handleOption(key))}
-          />
+          <CardHelp key={key} title={card.title} icon={card.icon} isActive={key === optionHelp} onClick={() => setOptionHelp(handleOption(key))} />
         ))}
       </CardContainer>
-      <InfoContainer>
-        {optionHelp === 0 ? <HelpInformation /> : optionHelp === 1 && <Faqs />}
-      </InfoContainer>
+      <InfoContainer>{optionHelp === 0 ? <HelpInformation /> : optionHelp === 1 && <Faqs />}</InfoContainer>
     </Wrapper>
   )
 }

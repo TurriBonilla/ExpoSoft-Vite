@@ -1,66 +1,58 @@
-import {
-	Dispatch,
-	InputHTMLAttributes,
-	MouseEventHandler,
-	SetStateAction,
-} from 'react'
+import { Dispatch, InputHTMLAttributes, MouseEventHandler, SetStateAction } from 'react'
 
 export interface CredentialsInterface {
-	email: string
-	password: string
+  email: string
+  password: string
 }
 
 export interface RegisterInterface {
-	name: string
-	surname: string
-	email: string
-	confirmEmail: string
-	password: string
-	confirmPassword: string
+  name: string
+  surname: string
+  email: string
+  confirmEmail: string
+  password: string
+  confirmPassword: string
 }
 
 export interface SidebarProps {
-	showMenu: boolean
+  showMenu: boolean
 }
 
 export interface OnClickInterface<T> {
-	onClick: MouseEventHandler<T>
+  onClick: MouseEventHandler<T>
 }
 
 export interface DataCardHelpProps {
-	title: string
-	icon: JSX.Element
+  title: string
+  icon: JSX.Element
 }
 
-export interface CardHelpProps
-	extends OnClickInterface<HTMLButtonElement>,
-		IsActiveInterface,
-		DataCardHelpProps {}
+export interface CardHelpProps extends OnClickInterface<HTMLButtonElement>, IsActiveInterface, DataCardHelpProps {}
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-	setState: Dispatch<SetStateAction<any>>
-	name: string
+  setState: Dispatch<SetStateAction<any>>
+  name: string
 }
 
 export interface FaqInterface {
-	faq: string
-	body: string
-	show: boolean
+  faq: string
+  body: string
+  show: boolean
 }
 
 export interface ResultModuleInterface {
-	title: string
+  title: string
 }
 
 export interface ColorInterface {
-	color: 'primary' | 'secondary' | 'error' | 'alert' | 'success'
+  color: 'primary' | 'secondary' | 'error' | 'alert' | 'success'
 }
 
 export interface FaqsProps {
-	faq: string
-	body: string
+  faq: string
+  body: string
 }
 
 export interface IsActiveInterface {
-	isActive: boolean
+  isActive: boolean
 }

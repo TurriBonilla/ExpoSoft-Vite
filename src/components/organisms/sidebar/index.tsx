@@ -1,10 +1,4 @@
-import {
-  WrapperLinks,
-  LinkItem,
-  WraperProfile,
-  WrapperImageProfile,
-  WrapperInformation
-} from './style'
+import { WrapperLinks, LinkItem, WraperProfile, WrapperImageProfile, WrapperInformation } from './style'
 import { dataSidebar } from 'const'
 import { SidebarProps } from 'interfaces'
 import { MdOutlinePowerSettingsNew } from 'react-icons/md'
