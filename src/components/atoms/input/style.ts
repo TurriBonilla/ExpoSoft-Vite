@@ -16,7 +16,7 @@ export const Input = styled.input`
 	}
 
 	&:focus {
-		outline: none;
+		outline: 1px solid var(--success);
 	}
 
 	@media screen and (max-width: 1366px) {

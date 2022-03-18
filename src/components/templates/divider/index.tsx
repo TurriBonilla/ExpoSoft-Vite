@@ -18,7 +18,7 @@ const Divider = ({ children }: DividerProps) => {
     <WrapperBody>
       <WrapperForm>
         <Form>
-          <Title title='ExpoSoft' />
+          <Title>ExpoSoft</Title>
           {children}
           <Copyright>
             Copyright &copy; {new Date().getFullYear()} ExpoSoft | Derechos
@@ -39,3 +39,24 @@ const Divider = ({ children }: DividerProps) => {
 }
 
 export default Divider
+
+{/* <WrapperBody>
+    <WrapperForm>
+      <Form>
+        <Title title='ExpoSoft' />
+        {children}
+        <Copyright>
+          Copyright &copy; {new Date().getFullYear()} ExpoSoft | Derechos
+          reservados.
+        </Copyright>
+      </Form>
+      <ContainerMap className='hidden'>
+        <img src={Map} alt='Mapa de Exportación' />
+      </ContainerMap>
+    </WrapperForm>
+    <WrapperBrand>
+      <ContainerMap>
+        <img src={Map} alt='Mapa de Exportación' />
+      </ContainerMap>
+    </WrapperBrand>
+</WrapperBody> */}

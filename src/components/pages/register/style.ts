@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
 export const WrapperItems = styled.div`
   display: grid;
@@ -22,13 +21,4 @@ export const TextRegister = styled.p`
   color: var(--grayColor);
   font-size: var(--fontSizeSmall);
   text-align: center;
-`
-
-export const LinkRegister = styled(Link)`
-  font-size: var(--fontSizeSmall);
-  color: var(--primary);
-  &:hover {
-    color: var(--primaryHover);
-    text-decoration: underline;
-  }
 `

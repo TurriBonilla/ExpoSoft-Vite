@@ -10,14 +10,9 @@ export const Label = styled.label`
   font-weight: 500;
 `
 
-export const TextRegister = styled.p`
-  color: var(--grayColor);
-  font-size: var(--fontSizeSmall);
-`
-
 export const LinkRegister = styled(Link)`
   font-size: var(--fontSizeSmall);
-  color: var(--primary);
+  color: var(--info);
 
   &:hover {
     color: var(--primaryHover);
