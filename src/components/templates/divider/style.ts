@@ -39,7 +39,7 @@ export const WrapperForm = styled.div`
 
   .hidden {
     display: none;
-  }
+  }      
 
   @media screen and (max-width: 900px) {
     width: 100%;
