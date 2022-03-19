@@ -3,11 +3,10 @@ import { Divider } from 'components/templates'
 import { dataFormRegister } from 'const'
 import { RegisterInterface } from 'interfaces'
 import { HTMLInputTypeAttribute, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { validateRegister } from './register'
 import { WrapperItems, WrapperLabelAndInput, TextRegister } from './style'
-
 import { LinkRegister } from '../login/style'
+import { useLocalStorage } from 'utils/localStorage'
 
 interface DataFormRegisterAttributes {
   name: string
@@ -16,16 +15,15 @@ interface DataFormRegisterAttributes {
 }
 
 const Register = () => {
+  const [storedValue, setValue] = useLocalStorage('credentials')
   const [register, setRegister] = useState<RegisterInterface>({
     name: '',
-    surname: '',
+    nit: '',
     email: '',
     confirmEmail: '',
     password: '',
     confirmPassword: '',
   })
-  const navigate = useNavigate()
-
   return (
     <Divider>
       <TextRegister>Regístrate para conocer el nivel de potencial exportador de tu empresa.</TextRegister>
@@ -38,7 +36,7 @@ const Register = () => {
           ))}
         </WrapperItems>
       </>
-      <Button type='button' color='success' onClick={() => validateRegister(register, navigate)}>
+      <Button type='button' color='success' onClick={() => validateRegister(register, setValue)}>
         Registrarse
       </Button>
       <TextRegister>
