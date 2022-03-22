@@ -1,5 +1,4 @@
-import { Button } from 'components/atoms'
-import { Input } from 'components/atoms'
+import { Input, Button } from 'components/atoms'
 import { Divider } from 'components/templates'
 import { validateLogin } from './functions'
 import { useNavigate } from 'react-router-dom'
