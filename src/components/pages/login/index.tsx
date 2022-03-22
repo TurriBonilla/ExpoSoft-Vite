@@ -1,31 +1,38 @@
-import { useState } from 'react'
 import { Button } from 'components/atoms'
 import { Input } from 'components/atoms'
 import { Divider } from 'components/templates'
-import { validateLogin } from './login'
-import { CredentialsInterface } from 'interfaces'
+import { validateLogin } from './functions'
 import { useNavigate } from 'react-router-dom'
 import { WrapperLabelAndInput, LinkRegister } from './style'
 
 import { TextRegister } from '../register/style'
+import { useFormik } from 'formik'
+import { loginInitialValues, loginSchema } from './schema'
+import { useFormikFiledProps } from 'hooks'
 
 const Login = () => {
-  const [credentials, setCredentials] = useState<CredentialsInterface>({
-    email: '',
-    password: '',
-  })
-
   const navigate = useNavigate()
 
+  const formik = useFormik({
+    initialValues: loginInitialValues,
+    validationSchema: loginSchema,
+    onSubmit: (data, { resetForm }) => {
+      validateLogin(navigate)
+      return
+    },
+  })
+
+    const [getFieldFormikProps] = useFormikFiledProps(formik)
+
   return (
-    <Divider>
+    <Divider formik={formik}>
       <WrapperLabelAndInput>
-        <Input id='email' name='email' placeholder='Email' setState={setCredentials} type='email' />
+        <Input {...getFieldFormikProps('email')} placeholder='Email' type='email' />
       </WrapperLabelAndInput>
       <WrapperLabelAndInput>
-        <Input id='password' name='password' placeholder='Contraseña' setState={setCredentials} type='password' />
+        <Input {...getFieldFormikProps('password')} placeholder='Contraseña' type='password' />
       </WrapperLabelAndInput>
-      <Button type='button' color='success' onClick={() => validateLogin(credentials, navigate)}>
+      <Button type='submit' color='success'>
         Ingresar
       </Button>
       <TextRegister>
