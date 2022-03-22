@@ -5,16 +5,19 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prettier": "npx prettier --write ."
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "formik": "2.2.9",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "4.3.1",
     "react-router-dom": "6.2.1",
     "react-scripts": "5.0.0",
-    "styled-components": "5.3.3"
+    "styled-components": "5.3.3",
+    "yup": "0.32.11"
   },
   "devDependencies": {
     "@types/react": "17.0.33",
