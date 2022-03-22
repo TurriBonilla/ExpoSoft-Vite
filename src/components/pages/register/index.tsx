@@ -5,7 +5,7 @@ import { HTMLInputTypeAttribute } from 'react'
 import { registerOnSubmit } from './functions'
 import { WrapperItems, WrapperLabelAndInput, TextRegister } from './style'
 import { LinkRegister } from '../login/style'
-import { useLocalStorage , useFormikFiledProps} from 'hooks'
+import { useLocalStorage, useFormikFiledProps } from 'hooks'
 import { useFormik, getIn } from 'formik'
 import { registerInitialValues, registerSchema } from './schema'
 

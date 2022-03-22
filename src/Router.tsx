@@ -1,5 +1,6 @@
 import { Navigate, useRoutes } from 'react-router-dom'
 import { Dashboard, Help, Home, Login, Poll, Register } from 'components/pages'
+import { Loader } from 'components/atoms'
 
 const Router = () => {
   return useRoutes([
@@ -33,6 +34,7 @@ const Router = () => {
       path: '/registro',
       element: <Register />,
     },
+    { path: 'loading', element: <Loader /> },
     {
       path: '/404',
       element: <p>not found</p>,
