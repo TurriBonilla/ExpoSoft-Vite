@@ -115,7 +115,8 @@ const dataPoll = [
   {
     id: 'f2',
     module: 'Intención exportadora y percepción de barreras a la exportación',
-    spanTitle: 'A su juicio, ¿Cuáles son los principales obstáculos que tiene que enfrentar el empresario para consolidar los esfuerzos hacia la exportación?',
+    spanTitle:
+      'A su juicio, ¿Cuáles son los principales obstáculos que tiene que enfrentar el empresario para consolidar los esfuerzos hacia la exportación?',
     information: '(Siendo 5 la mayor competitividad 1 la menor, califique)',
     questions: [
       {
@@ -603,7 +604,13 @@ const dataPoll = [
       {
         idQuestion: '04',
         question: '¿Qué formas de entrada proyecta para los siguientes años?',
-        options: [{ option: 'Exportación indirecta' }, { option: 'Exportación directa' }, { option: 'Agentes' }, { option: 'Distribuidores' }, { option: 'Subsidiarias' }],
+        options: [
+          { option: 'Exportación indirecta' },
+          { option: 'Exportación directa' },
+          { option: 'Agentes' },
+          { option: 'Distribuidores' },
+          { option: 'Subsidiarias' },
+        ],
       },
     ],
   },

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { Form as Formik } from 'formik'
 
 export const FlexCenter = css`
   display: flex;
@@ -59,7 +60,7 @@ export const WrapperBrand = styled.div`
   }
 `
 
-export const Form = styled.form`
+export const Form = styled(Formik)`
   width: 75%;
   ${FlexCenter};
   flex-direction: column;

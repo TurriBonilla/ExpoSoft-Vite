@@ -1,12 +1,13 @@
 import { Button, Input } from 'components/atoms'
 import { Divider } from 'components/templates'
 import { dataFormRegister } from 'const'
-import { RegisterInterface } from 'interfaces'
-import { HTMLInputTypeAttribute, useState } from 'react'
-import { validateRegister } from './register'
+import { HTMLInputTypeAttribute } from 'react'
+import { registerOnSubmit } from './functions'
 import { WrapperItems, WrapperLabelAndInput, TextRegister } from './style'
 import { LinkRegister } from '../login/style'
-import { useLocalStorage } from 'utils/localStorage'
+import { useLocalStorage , useFormikFiledProps} from 'hooks'
+import { useFormik, getIn } from 'formik'
+import { registerInitialValues, registerSchema } from './schema'
 
 interface DataFormRegisterAttributes {
   name: string
@@ -15,28 +16,29 @@ interface DataFormRegisterAttributes {
 }
 
 const Register = () => {
-  const [storedValue, setValue] = useLocalStorage('credentials')
-  const [register, setRegister] = useState<RegisterInterface>({
-    name: '',
-    nit: '',
-    email: '',
-    confirmEmail: '',
-    password: '',
-    confirmPassword: '',
+  const formik = useFormik({
+    initialValues: registerInitialValues,
+    validationSchema: registerSchema,
+    onSubmit: (data, form) => {
+      registerOnSubmit({ data, form, setStoredValue })
+    },
   })
+
+  const [storedValue, setStoredValue] = useLocalStorage('credentials')
+
+  const [getFieldFormikProps] = useFormikFiledProps(formik)
+
   return (
-    <Divider>
+    <Divider formik={formik}>
       <TextRegister>Regístrate para conocer el nivel de potencial exportador de tu empresa.</TextRegister>
-      <>
-        <WrapperItems>
-          {dataFormRegister.map((element: DataFormRegisterAttributes, key: number) => (
-            <WrapperLabelAndInput key={key}>
-              <Input id={element.name} name={element.name} placeholder={element.placeholder} setState={setRegister} type={element.type} />
-            </WrapperLabelAndInput>
-          ))}
-        </WrapperItems>
-      </>
-      <Button type='button' color='success' onClick={() => validateRegister(register, setValue)}>
+      <WrapperItems>
+        {dataFormRegister.map(({ name, placeholder, type }: DataFormRegisterAttributes, key: number) => (
+          <WrapperLabelAndInput key={key}>
+            <Input {...getFieldFormikProps(name)} placeholder={placeholder} type={type} />
+          </WrapperLabelAndInput>
+        ))}
+      </WrapperItems>
+      <Button type='submit' color='success'>
         Registrarse
       </Button>
       <TextRegister>

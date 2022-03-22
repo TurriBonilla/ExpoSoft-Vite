@@ -1,4 +1,4 @@
-const validateLetter = (word: string) => {
+const validateLetter = (word = '') => {
   if (!/^[A-Z]+$/i.test(word)) {
     return true
   }

@@ -17,7 +17,11 @@ const QuestionOfPoll = (props: QuestionOfPollProps) => {
     <WrapperQuestion>
       <span>{title}</span>
       {options.map((data: any, key: number) => (
-        <Answer key={`${moduleId}-${key}`} onClick={() => setSelect(`${moduleId}-${key}`)} isSelected={select === `${moduleId}-${key}` ? true : false}>
+        <Answer
+          key={`${moduleId}-${key}`}
+          onClick={() => setSelect(`${moduleId}-${key}`)}
+          isSelected={select === `${moduleId}-${key}` ? true : false}
+        >
           {select === `${moduleId}-${key}` ? <MdOutlineRadioButtonChecked /> : <MdOutlineRadioButtonUnchecked />}
           <label>{data.option}</label>
         </Answer>

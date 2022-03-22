@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 export const WrapperCard = styled.button<IsActiveInterface>`
   height: 100%;
-  ${({ isActive }) => (isActive ? 'background-color: #eaeaea; border: 2px solid white;' : 'background-color: var(--whiteColor); border: 2px solid transparent;')};
+  ${({ isActive }) =>
+    isActive ? 'background-color: #eaeaea; border: 2px solid white;' : 'background-color: var(--whiteColor); border: 2px solid transparent;'};
 
   box-shadow: 0px 0px 70px -50px rgba(181, 181, 181, 1);
   border-radius: var(--borderRadiusGeneral);

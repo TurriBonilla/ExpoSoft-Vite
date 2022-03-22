@@ -34,7 +34,9 @@ export const Graphic = styled.div<GraphicProps>`
 			yellow ${data[0] + data[1] + data[2] + data[3]}% ${data[0] + data[1] + data[2] + data[3] + data[4]}%,
 			violet ${data[0] + data[1] + data[2] + data[3] + data[4]}% ${data[0] + data[1] + data[2] + data[3] + data[4] + data[5]}%,
 			gray ${data[0] + data[1] + data[2] + data[3] + data[4] + data[5]}% ${data[0] + data[1] + data[2] + data[3] + data[4] + data[5] + data[6]}%,
-			purple ${data[0] + data[1] + data[2] + data[3] + data[4] + data[5] + data[6]}% ${data[0] + data[1] + data[2] + data[3] + data[4] + data[5] + data[6] + data[7]}%
+			purple ${data[0] + data[1] + data[2] + data[3] + data[4] + data[5] + data[6]}% ${
+      data[0] + data[1] + data[2] + data[3] + data[4] + data[5] + data[6] + data[7]
+    }%
 		);
 	`}
 `

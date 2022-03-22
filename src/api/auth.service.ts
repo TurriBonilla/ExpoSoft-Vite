@@ -3,12 +3,12 @@ import { CredentialsInterface, RegisterData } from 'interfaces'
 import { ExpoApi } from './config'
 
 class AuthService {
-  login(data: AxiosRequestConfig<CredentialsInterface>) {
-    return ExpoApi.get('/api/auth', data)
+  login(data: AxiosRequestConfig<CredentialsInterface>, handler: Function) {
+    return ExpoApi.get('/api/auth', data).then(response => handler(response.data))
   }
 
-  register(data: RegisterData, handle: Function) {
-    return ExpoApi.post('/api/auth', data).then(res => handle(res.data))
+  register(data: RegisterData, handler: Function) {
+    return ExpoApi.post('/api/auth', data).then(response => handler(response.data))
   }
 }
 

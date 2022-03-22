@@ -1,4 +1,5 @@
-import { Dispatch, InputHTMLAttributes, MouseEventHandler, SetStateAction } from 'react'
+import { FieldInputProps, FormikHandlers } from 'formik'
+import { InputHTMLAttributes, MouseEventHandler } from 'react'
 
 export interface CredentialsInterface {
   email: string
@@ -31,15 +32,10 @@ export interface DataCardHelpProps {
 
 export interface CardHelpProps extends OnClickInterface<HTMLButtonElement>, IsActiveInterface, DataCardHelpProps {}
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  setState: Dispatch<SetStateAction<any>>
-  name: string
-}
+export type InputFormikAttributes = FieldInputProps<any> & InputHTMLAttributes<HTMLInputElement>
 
-export interface FaqInterface {
-  faq: string
-  body: string
-  show: boolean
+export interface InputFormikProps extends InputFormikAttributes {
+  error: boolean
 }
 
 export interface ResultModuleInterface {
@@ -47,7 +43,7 @@ export interface ResultModuleInterface {
 }
 
 export interface ColorInterface {
-  color: 'primary' | 'secondary' | 'error' | 'alert' | 'success'
+  color: 'primary' | 'secondary' | 'error' | 'alert' | 'success' | 'warning'
 }
 
 export interface FaqsProps {
