@@ -1,4 +1,4 @@
-import { Input, Button } from 'components/atoms'
+import { Button,Input } from 'components/atoms'
 import { Divider } from 'components/templates'
 import { validateLogin } from './functions'
 import { useNavigate } from 'react-router-dom'
@@ -21,7 +21,7 @@ const Login = () => {
     },
   })
 
-    const [getFieldFormikProps] = useFormikFiledProps(formik)
+  const [getFieldFormikProps] = useFormikFiledProps(formik)
 
   return (
     <Divider formik={formik}>
