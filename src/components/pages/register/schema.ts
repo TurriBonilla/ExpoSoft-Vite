@@ -3,14 +3,14 @@ import { object, string } from 'yup'
 
 export const registerSchema = object().shape({
   name: string()
-    .min(3, 'El nombre debe tener minimo 3 caracteres')
-    .max(100, 'El nombre debe tener maximo 100 caracteres')
-    .test('len', 'El nombre solo puede contener letras', value => validateLetters(value))
+    .min(3, 'El nombre debe tener mínimo 3 caracteres')
+    .max(100, 'El nombre debe tener máximo 100 caracteres')
+    .test('len', 'El nombre solo puede contener letras', value => !validateLetters(value))
     .required('El nombre es requerido'),
   nit: string()
     .required('El nit es requerido')
     .test('len', 'El NIT no coincide con el formato', value => validateLetters(value)),
-  email: string().required('El email es requerido').email('Este no es un email validao'),
+  email: string().required('El email es requerido').email('Este no es un email válido'),
   confirmEmail: string()
     .required('Debe confirmar el email.')
     .when('email', (email, schema) =>
