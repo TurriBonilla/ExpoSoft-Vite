@@ -1,4 +1,4 @@
-import { Button, Input } from 'components/atoms'
+import { Button, Input, InputNit } from 'components/atoms'
 import { Divider } from 'components/templates'
 import { dataFormRegister } from 'const'
 import { HTMLInputTypeAttribute } from 'react'
@@ -34,7 +34,11 @@ const Register = () => {
       <WrapperItems>
         {dataFormRegister.map(({ name, placeholder, type }: DataFormRegisterAttributes, key: number) => (
           <WrapperLabelAndInput key={key}>
-            <Input {...getFieldFormikProps(name)} placeholder={placeholder} type={type} />
+            {name !== 'nit' ? (
+              <Input {...getFieldFormikProps(name)} placeholder={placeholder} type={type} />
+            ) : (
+              <InputNit {...getFieldFormikProps(name)} />
+            )}
           </WrapperLabelAndInput>
         ))}
       </WrapperItems>
