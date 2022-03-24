@@ -1,9 +1,8 @@
-import { Button,Input } from 'components/atoms'
+import { Button, Input } from 'components/atoms'
 import { Divider } from 'components/templates'
 import { validateLogin } from './functions'
 import { useNavigate } from 'react-router-dom'
 import { WrapperLabelAndInput, LinkRegister } from './style'
-
 import { TextRegister } from '../register/style'
 import { useFormik } from 'formik'
 import { loginInitialValues, loginSchema } from './schema'

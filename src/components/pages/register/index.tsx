@@ -1,7 +1,7 @@
 import { Button, Input, InputNit } from 'components/atoms'
 import { Divider } from 'components/templates'
 import { dataFormRegister } from 'const'
-import { HTMLInputTypeAttribute } from 'react'
+import { HTMLInputTypeAttribute, useRef } from 'react'
 import { registerOnSubmit } from './functions'
 import { WrapperItems, WrapperLabelAndInput, TextRegister } from './style'
 import { LinkRegister } from '../login/style'

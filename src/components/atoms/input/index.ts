@@ -1,7 +1,7 @@
 import { InputFormikProps } from 'interfaces'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-const Input = styled.input<InputFormikProps>`
+export const InputCSS = css<InputFormikProps>`
   height: 1.5rem;
   width: 100%;
   font-size: var(--fontSizeNormal);
@@ -32,6 +32,10 @@ const Input = styled.input<InputFormikProps>`
   @media screen and (max-width: 1366px) {
     font-size: var(--fontSizeSmall);
   }
+`
+
+const Input = styled.input`
+  ${InputCSS}
 `
 
 export default Input
