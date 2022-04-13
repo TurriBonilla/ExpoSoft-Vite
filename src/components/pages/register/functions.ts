@@ -1,15 +1,7 @@
 import authService from 'api/auth.service'
-import { FormikHelpers } from 'formik'
 import { RegisterInterface, ResponseAuth } from 'interfaces'
 
-interface registerOnSubmitProps {
-  data: RegisterInterface
-  form: FormikHelpers<RegisterInterface>
-  setStoredValue: (value: any) => void
-}
-
-export const registerOnSubmit = ({ data, form, setStoredValue }: registerOnSubmitProps) => {
-  const { resetForm } = form
+export const registerOnSubmit = (data: RegisterInterface, setStoredValue: (value: any) => void) => {
   const businessData = { ...data, confirmEmail: undefined, confirmPassword: undefined }
 
   authService.register(businessData, (response: ResponseAuth) => {

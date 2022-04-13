@@ -14,7 +14,7 @@ const Login = () => {
   const formik = useFormik({
     initialValues: loginInitialValues,
     validationSchema: loginSchema,
-    onSubmit: (data, { resetForm }) => {
+    onSubmit: (data) => {
       validateLogin(navigate)
       return
     },
